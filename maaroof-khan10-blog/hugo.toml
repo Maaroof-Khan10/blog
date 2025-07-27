@@ -1,0 +1,4 @@
+baseURL = 'https://Maaroof-Khan10.github.io/'
+languageCode = 'en-us'
+title = 'Maaroof Khan - Blog'
+theme="hugo-theme-re-terminal"

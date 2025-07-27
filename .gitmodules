@@ -1,0 +1,4 @@
+[submodule "maaroof-khan10-blog/public"]
+	path = maaroof-khan10-blog/public
+	url = https://github.com/Maaroof-Khan10/Maaroof-Khan10.github.io.git
+	branch = main
