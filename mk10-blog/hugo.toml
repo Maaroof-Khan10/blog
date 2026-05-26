@@ -1,0 +1,12 @@
+baseURL = 'https://Maaroof-Khan10.github.io/'
+locale = 'en-us'
+title = 'MK-WriteUps'
+theme = "re-terminal"
+
+[params]
+    themeColor = "red"
+    autoCover = true
+
+[params.author]
+    name = "Maaroof Khan"
+    email = "maaroofkhan2004@gmail.com"

@@ -1,4 +1,7 @@
-[submodule "maaroof-khan10-blog/public"]
-	path = maaroof-khan10-blog/public
+[submodule "mk10-blog/themes/re-terminal"]
+	path = mk10-blog/themes/re-terminal
+	url = https://github.com/mirus-ua/hugo-theme-re-terminal.git
+[submodule "mk10-blog/public"]
+	path = mk10-blog/public
 	url = https://github.com/Maaroof-Khan10/Maaroof-Khan10.github.io.git
 	branch = main
