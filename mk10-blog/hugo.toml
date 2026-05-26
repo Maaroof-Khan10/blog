@@ -10,3 +10,33 @@ theme = "re-terminal"
 [params.author]
     name = "Maaroof Khan"
     email = "maaroofkhan2004@gmail.com"
+
+[languages]
+  [languages.en.params]
+    languageName = "English"
+    title = "MK-WriteUps"
+    subtitle = "A simple, retro theme for Hugo"
+    owner = ""
+    keywords = ""
+    copyright = ""
+    menuMore = "Show more"
+    readMore = "Read more"
+    readOtherPosts = "Read other posts"
+    newerPosts = "Newer posts"
+    olderPosts = "Older posts"
+    missingContentMessage = "Page not found..."
+    missingBackButtonLabel = "Back to home page"
+    minuteReadingTime = "min read"
+    words = "words"
+
+    [languages.en.params.logo]
+      logoText = "MK-WriteUps"
+      logoHomeLink = "/"
+
+[module]
+  # In case you would like to make changes to the theme and keep it locally in you repository,
+  # uncomment the line below (and correct the local path if necessary).
+  # --
+  # replacements = "github.com/mirus-ua/hugo-theme-re-terminal -> themes/re-terminal"
+[[module.imports]]
+  path = 're-terminal'
