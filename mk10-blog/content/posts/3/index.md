@@ -124,7 +124,7 @@ ubuntu:
 
 Time to breakdown all the complex jargon that we see above. We first define the image we want to use, `kalilinux/kali-rolling` for our `attackBox` and `ubuntu:22.04` for our `victimBox`. That is pretty straight forward, next we need to have some capabilities in both the machines so that `suricata` can monitor the network without any issues. We define them using `cap_add`, starting with `NET_ADMIN` giving networking administrating rights, `NET_RAW` letting us capture raw packets and `SYS_NICE` for priority management.
 
-Then we get to `tty: true` and `stdin_open: true`, we are just telling the containers to stay active and keep standard input open so we can get interactive shells later. On the `ubuntu` machine we also have a `ports` section, because we will be running `OWASP Juice Shop`, a vulnerable web app on it and we want to access it from our host machine, so we expose the port `5050` on our host machine which maps to the port `80` on the container, that is what the `5050:80` means. We are doing this because we will run this app through nginx so we get proper `apache` logs and that can be fed and viewed by Wazuh. And we also assign them unique IPs like the wazuh services.
+Then we get to `tty: true` and `stdin_open: true`, we are just telling the containers to stay active and keep standard input open so we can get interactive shells later. On the `ubuntu` machine we also have a `ports` section, because we will be running `OWASP Juice Shop`, a vulnerable web app on it and we want to access it from our host machine, so we expose the port `5050` on our host machine which maps to the port `80` on the container, that is what the `5050:80` means. We are doing this because we will run this app through nginx so we get proper `apache` or `syslog` logs and that can be fed and viewed by Wazuh. And we also assign them unique IPs like the wazuh services.
 
 We are now done with the configuration part, you can skip this by downloading this `yml` file from [my repo](https://github.com/Maaroof-Khan10/Docker-Wazuh-HomeLab/blob/main/docker-compose.yml) directly if you just want to follow along or need a reference point to compare your configs. We can now start these containers but first we need to finish the certificate generation as per Wazuh's documentations. Go ahead and run this in the terminal:
 
@@ -290,11 +290,13 @@ It is now time to add all the log files we have. Scroll to the botoom of the `.c
 
 <!-- Nginx log files -->
 <localfile>
+  <!-- This can also be set to 'apache' -->
   <log_format>syslog</log_format>
   <location>/var/log/nginx/access.log</location>
 </localfile>
 
 <localfile>
+  <!-- This can also be set to 'apache' -->
   <log_format>syslog</log_format>
   <location>/var/log/nginx/error.log</location>
 </localfile>
